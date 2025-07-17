@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>قيّمني - صفحة الزائر</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background-color: #f0f8ff;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    h2 {
+      text-align: center;
+      color: #3DBEFF;
+    }
+    #usernameDisplay {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .options {
+      display: flex;
+      gap: 10px;
+    }
+    .options label {
+      background-color: #3DBEFF;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+    .options label:hover {
+      background-color: #1fa0dd;
+    }
+    .options input[type="radio"] {
+      display: none;
+    }
+    .options input[type="radio"]:checked + span {
+      background-color: #035f8d !important;
+    }
+    .options input[type="radio"]:checked + label {
+      outline: 2px solid #fff;
+      box-shadow: 0 0 0 2px #035f8d;
+    }
+    .options input[type="radio"]:checked ~ label {
+      background-color: #035f8d;
+    }
+    .options label.selected {
+      background-color: #035f8d !important;
+    }
+    .words {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .words label {
+      background-color: #eee;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .words input[type="checkbox"]:checked + label {
+      background-color: #3DBEFF;
+      color: white;
+    }
+    .submit-btn {
+      margin-top: 30px;
+      background-color: #3DBEFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .disclaimer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>قيّمني</h2>
+    <div id="usernameDisplay"></div>
+    <form id="visitorForm">
+      <div class="question"><p>1. هل تراني ملتزم بالكلام والوعود؟</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="نعم"> نعم</label>
+          <label><input type="radio" name="q1" value="لا"> لا</label>
+          <label><input type="radio" name="q1" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>2. هل تراني اعامل الآخرين باحترام مهما كان اختلافهم؟</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="نعم"> نعم</label>
+          <label><input type="radio" name="q2" value="لا"> لا</label>
+          <label><input type="radio" name="q2" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>3. هل تراني اتمتع بروح الدعابة بطريقة محترمة؟</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="نعم"> نعم</label>
+          <label><input type="radio" name="q3" value="لا"> لا</label>
+          <label><input type="radio" name="q3" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>4. هل اتقبل النقد بصدر رحب؟</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="نعم"> نعم</label>
+          <label><input type="radio" name="q4" value="لا"> لا</label>
+          <label><input type="radio" name="q4" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>5. هل تراني اساعد الآخرين دون انتظار مقابل؟</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="نعم"> نعم</label>
+          <label><input type="radio" name="q5" value="لا"> لا</label>
+          <label><input type="radio" name="q5" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>6. هل تعتبرني مصدر ثقة في المواقف الصعبة؟</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="نعم"> نعم</label>
+          <label><input type="radio" name="q6" value="لا"> لا</label>
+          <label><input type="radio" name="q6" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>7. هل تراني احسن الاستماع للاخرين ؟</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="نعم"> نعم</label>
+          <label><input type="radio" name="q7" value="لا"> لا</label>
+          <label><input type="radio" name="q7" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>8. هل تراني احترم على خصوصية من حولي ؟</p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="نعم"> نعم</label>
+          <label><input type="radio" name="q8" value="لا"> لا</label>
+          <label><input type="radio" name="q8" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>9. هل اتحدث بطريقة لبقة ومهذبة؟</p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="نعم"> نعم</label>
+          <label><input type="radio" name="q9" value="لا"> لا</label>
+          <label><input type="radio" name="q9" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+      <div class="question"><p>10. كيف تراني اتعامل مع المشاكل ؟</p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="بعصبية"> بعصبية</label>
+          <label><input type="radio" name="q10" value="بهدوء"> بهدوء</label>
+          <label><input type="radio" name="q10" value="لا أعلم"> لا أعلم</label>
+        </div>
+      </div>
+
+      <h3 style="margin-top:40px;">قيّمني بثلاث كلمات:</h3>
+      <div class="words">
+        <label><input type="checkbox" name="words" value="أهوج"> أهوج</label>
+        <label><input type="checkbox" name="words" value="غبي"> غبي</label>
+        <label><input type="checkbox" name="words" value="صادق"> صادق</label>
+        <label><input type="checkbox" name="words" value="هادئ"> هادئ</label>
+        <label><input type="checkbox" name="words" value="طموح"> طموح</label>
+        <label><input type="checkbox" name="words" value="مضحك"> مضحك</label>
+        <label><input type="checkbox" name="words" value="حكيم"> حكيم</label>
+        <label><input type="checkbox" name="words" value="اجتماعي"> اجتماعي</label>
+        <label><input type="checkbox" name="words" value="متعاون"> متعاون</label>
+        <label><input type="checkbox" name="words" value="ذكي"> ذكي</label>
+      </div>
+
+      <button type="submit" class="submit-btn">إرسال التقييم</button>
+      <div class="disclaimer">لن يتم معرفة هويتك. تقييمك مجهول بالكامل.</div>
+    </form>
+  </div>
+
+  <script>
+    let user = "";
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      user = urlParams.get('user');
+      const display = document.getElementById('usernameDisplay');
+      if (user) {
+        display.textContent = `قيّم هذا المستخدم: ${user}`;
+      } else {
+        display.textContent = "قيّم هذا المستخدم";
+      }
+
+      // highlight selected answers visually
+      document.querySelectorAll('.options input[type="radio"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+          const labels = this.closest('.options').querySelectorAll('label');
+          labels.forEach(label => label.classList.remove('selected'));
+          this.parentElement.classList.add('selected');
+        });
+      });
+    };
+
+    document.getElementById("visitorForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const responses = {};
+      for (let [key, value] of formData.entries()) {
+        if (responses[key]) {
+          if (!Array.isArray(responses[key])) {
+            responses[key] = [responses[key]];
+          }
+          responses[key].push(value);
+        } else {
+          responses[key] = value;
+        }
+      }
+
+      if (!user) user = "unknown";
+      const existing = JSON.parse(localStorage.getItem("qeiminiData") || "{}");
+      if (!existing[user]) existing[user] = [];
+      existing[user].push(responses);
+      localStorage.setItem("qeiminiData", JSON.stringify(existing));
+
+      alert("✅ تم إرسال تقييمك بنجاح!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
