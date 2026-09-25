@@ -1,7 +1,8 @@
 {
   "name": "دير ستيل - نظام الحسابات والموردين",
   "short_name": "دير ستيل",
-  "start_url": "./",
+  "start_url": "/deirsteel/",
+  "scope": "/deirsteel/",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#121212",
